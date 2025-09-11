@@ -1,6 +1,18 @@
+:root {
+    --font-sans: 'Open Sans', Arial, sans-serif;
+    --font-serif: 'Palatino', sans-serif;
+}
+
+
+body {
+    font-family: var(--font-serif);
+}
+
 footer {
     padding: 20px;
     background-color: #ECEDEE;
+    font-size: 14px;
+    color: #555;
 }
 
 article {
@@ -8,7 +20,7 @@ article {
 }
 
 nav {
-  text-align: center;
+  text-align: left;
 }
 
 a {
@@ -29,6 +41,26 @@ bold {
 
 .ref {
   padding-top: 5%;
+}
+
+.gif-figure {
+    text-align: center;      /* center the image + caption */
+    margin: 20px 0;
+}
+
+.gif-figure figcaption {
+    font-size: 0.85em;        /* smaller than body text */
+    color: #777;              /* light grey */
+    margin-top: 4px;          /* small gap from image */
+}
+
+.gif-figure figcaption a {
+    color: inherit;           /* match caption text color */
+    text-decoration: none;    /* remove underline */
+}
+
+.gif-figure figcaption a:hover {
+    text-decoration: underline;
 }
 
 /* scrollbox properties */
@@ -68,13 +100,11 @@ bold {
   padding-top: 3%;
 }
 
+h1, h2, h3 { font-family: var(--font-sans);, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
 
-h1, h2, h3 { font-family: sans-serif;, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
-
-h4 { font-family: sans-serif;, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+h4 { font-family: var(--font-sans);, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 200; line-height: 26.4px;
     padding-top:5%;
 }
-
 
 .news {
   padding-top: 3%;
@@ -95,11 +125,20 @@ h4 { font-family: sans-serif;, sans-serif; font-size: 20px; font-style: normal; 
 }
 
 .sidebar_info {
- text-align: center;
+    display: flex;           /* icon + text in one line */
+    align-items: center;     /* vertical alignment */
+    gap: 8px;                /* space between icon and text */
+    margin: 4px 0;           /* small spacing between each row */
+}
+
+.sidebar_info i {
+    width: 18px;             /* force fixed width for icon box */
+    text-align: center;      /* center icon inside that width */
+    flex-shrink: 0;          /* icon won't get squeezed */
 }
 
 infobox h1 {
-  padding:2%;
+  padding:0%;
 }
 
 .title {
