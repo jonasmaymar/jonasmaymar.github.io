@@ -154,3 +154,25 @@ month {
 paper-title {
   font-style: italic;
 }
+
+#teaching {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.teaching-entry {
+  margin-bottom: 3%;
+  padding-bottom: 2%;
+  margin-left: 5%;
+  margin-left: 5%;
+  border-bottom: 1px solid #ECEDEE;
+}
+
+.teaching-entry h4 {
+  margin-bottom: 0.5em;
+}
+
+.teaching-entry .info {
+  text-align: justify;
+}
