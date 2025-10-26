@@ -176,3 +176,22 @@ paper-title {
 .teaching-entry .info {
   text-align: justify;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive columns */
+  gap: 20px; /* space between items */
+  margin-top: 20px;
+}
+
+.gallery figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery img {
+  max-width: 100%;  /* scale with container */
+  height: auto;     /* preserve aspect ratio */
+  display: block;
+  margin: 0 auto;
+}
