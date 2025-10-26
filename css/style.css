@@ -179,8 +179,8 @@ paper-title {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive columns */
-  gap: 20px; /* space between items */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -190,8 +190,9 @@ paper-title {
 }
 
 .gallery img {
-  max-width: 100%;  /* scale with container */
-  height: auto;     /* preserve aspect ratio */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
 }
