@@ -4,15 +4,108 @@
 }
 
 
+
 body {
-    font-family: var(--font-serif);
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #0a0a10;
+  color: #e8e8e8;
 }
+
+h1, h2, h3, h4 {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 600;
+  color: #f5f5f5;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+
+.site-header {
+  margin-bottom: 2rem;
+}
+
+
+/* Image container */
+.header-image {
+  position: relative;
+  height: 220px;              /* academic banner height */
+  background-image: url("../assets/el-rio-de-luz.jpg");
+  background-size: cover;
+  background-position: center 60%;
+}
+
+/* Dark overlay for text contrast */
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+/* Title styling */
+.header-overlay h1 {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.art-credit {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+
+.page-header {
+  margin: 3rem 0 2.5rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.page-intro {
+  color: #b0b0b0;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
 
 footer {
     padding: 20px;
-    background-color: #ECEDEE;
-    font-size: 14px;
-    color: #555;
+    background-color: #121212;
+    color: #aaa;
+    border-top: 1px solid #2a2a2a;
 }
 
 article {
@@ -21,6 +114,7 @@ article {
 
 .pub-title {
   font-weight: 600;
+  color: #ffffff;
 }
 
 .pub-list {
@@ -29,7 +123,7 @@ article {
 }
 
 .pub-list em {
-  color: #555;
+  color: #b0b0b0;
 }
 
 .pub-list a {
@@ -42,11 +136,12 @@ article {
 }
 
 nav {
-  text-align: left;
+text-align: left;
 }
 
 .navbar {
-  border-bottom: 1px solid #ddd;
+  background-color: #121212 !important;
+  border-bottom: 1px solid #5a5a5a;
 }
 
 .nav-link {
@@ -54,15 +149,15 @@ nav {
 }
 
 .nav-item.active .nav-link {
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #ddd;
 }
 
 a {
-  color: #003366;
+  color: #8ab4f8;
 }
 
 a:hover {
-  color: #001a33;
+  color: #a9c7ff;
 }
 
 strong {
@@ -74,13 +169,13 @@ strong {
 }
 
 .gif-figure {
-    text-align: center;      /* center the image + caption */
+    text-align: center;
     margin: 20px 0;
 }
 
 .gif-figure figcaption {
     font-size: 0.85em;        /* smaller than body text */
-    color: #777;              /* light grey */
+    color: #e8e8e8;              /* light grey */
     margin-top: 4px;          /* small gap from image */
 }
 
@@ -130,35 +225,10 @@ strong {
   padding-top: 3%;
 }
 
-body {
-  font-family: "Palatino Linotype", Palatino, serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #222;
-}
-
-h1, h2, h3, h4 {
-  font-family: "Open Sans", Arial, sans-serif;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 1.8rem;
-  margin: 2rem 0 1rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin: 2rem 0 1rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
 
 .news {
-  background-color: #f5f6f7;
+  background-color: #161617;
+  border-bottom: 1px solid #2a2a2a;
   border-left: 4px solid #ccc;
 }
 
@@ -216,7 +286,8 @@ month {
   padding-bottom: 2%;
   margin-left: 5%;
   margin-left: 5%;
-  border-bottom: 1px solid #ECEDEE;
+  background-color: #0a0a10;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .teaching-entry h4 {
@@ -227,69 +298,64 @@ month {
   text-align: justify;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+
+
+.main-content {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
 }
 
-.gallery figure {
-  margin: 0;
-  text-align: center;
+.project {
+  margin: 4rem 0;
 }
 
-.gallery img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-
-.site-header {
-  margin-bottom: 2rem;
-}
-
-
-/* Image container */
-.header-image {
-  position: relative;
-  height: 220px;              /* academic banner height */
-  background-image: url("../assets/el-rio-de-luz.jpg");
-  background-size: cover;
-  background-position: center 60%;
-}
-
-/* Dark overlay for text contrast */
-.header-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-}
-
-/* Title styling */
-.header-overlay h1 {
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 2.2rem;
-  font-weight: 600;
+.project h2 {
   margin-bottom: 0.3rem;
 }
 
-.header-subtitle {
-  font-size: 1rem;
-  opacity: 0.9;
+.project-subtitle {
+  color: #b0b0b0;
+  margin-bottom: 1rem;
 }
 
-.art-credit {
-  font-size: 0.75rem;
-  color: #666;
-  margin-top: 0.5rem;
-  text-align: left;
+.project-ref {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+}
+
+.gallery figure {
+  background-color: #161617;
+  padding: 12px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.gallery figure:hover {
+  transform: translateY(-3px);
+}
+
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 900px;
+  }
 }
