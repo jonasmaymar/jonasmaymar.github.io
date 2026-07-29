@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jonas Mayer Martins: Conference Deadlines</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .deadline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .deadline-table thead tr {
+            background-color: #1a1a24;
+            color: #f5f5f5;
+            font-family: "Open Sans", Arial, sans-serif;
+            font-weight: 600;
+        }
+
+        .deadline-table th,
+        .deadline-table td {
+            padding: 0.65rem 0.9rem;
+            border-bottom: 1px solid #2a2a2a;
+            vertical-align: middle;
+        }
+
+        .deadline-table tbody tr:hover {
+            background-color: #13131c;
+        }
+
+        .badge-passed {
+            background-color: #2a2a2a;
+            color: #888;
+            font-size: 0.75rem;
+            padding: 2px 7px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        .badge-upcoming {
+            background-color: #1a3a2a;
+            color: #6dbf8a;
+            font-size: 0.75rem;
+            padding: 2px 7px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        tr.row-passed a {
+            color: #666;
+        }
+
+        tr.row-passed a:hover {
+            color: #888;
+        }
+
+        tr.row-passed td {
+            color: #666;
+        }
+
+        tr.row-passed td:first-child {
+            text-decoration: line-through;
+            text-decoration-color: #444;
+        }
+
+        .arr-note {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .arr-cycles-box {
+            background-color: #161620;
+            border-left: 4px solid #8ab4f8;
+            padding: 0.75rem 1.1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .arr-cycles-box strong {
+            color: #8ab4f8;
+        }
+
+        /* Small icon links shown after the conference name */
+        .conf-links {
+            display: inline-flex;
+            gap: 6px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        .conf-links a {
+            font-size: 0.75rem;
+            color: #666;
+            border: 1px solid #333;
+            border-radius: 3px;
+            padding: 1px 5px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color 0.15s, border-color 0.15s;
+        }
+
+        .conf-links a:hover {
+            color: #a9c7ff;
+            border-color: #8ab4f8;
+            text-decoration: none;
+        }
+
+        /* Dim the links for passed rows */
+        tr.row-passed .conf-links a {
+            color: #444;
+            border-color: #2a2a2a;
+        }
+
+        .page-updated {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 3rem;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <ul class="navbar-nav ml-auto mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="publications.html">Publications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="teaching.html">Teaching</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="art-of-science.html">Art of Science</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="deadlines.html">Deadlines</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container main-content">
+    <header class="page-header">
+        <h1>Conference Deadlines</h1>
+        <p class="page-intro">
+            Upcoming submission deadlines for conferences and workshops relevant to our lab.
+        </p>
+    </header>
+
+    <div class="arr-cycles-box">
+        <strong>ARR Cycles 2026 &mdash;</strong>
+        submission windows used by ACL-affiliated venues:
+        <strong>August 3</strong> &nbsp;&middot;&nbsp; <strong>October 12</strong>
+    </div>
+
+    <h2>Conferences</h2>
+    <table class="deadline-table">
+        <thead>
+            <tr>
+                <th>Conference</th>
+                <th>Location</th>
+                <th>Conference Dates</th>
+                <th>Submission Deadline</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="conf-body"></tbody>
+    </table>
+
+    <h2 style="margin-top: 3rem;">Workshops</h2>
+    <table class="deadline-table">
+        <thead>
+            <tr>
+                <th>Workshop</th>
+                <th>Location</th>
+                <th>Workshop Dates</th>
+                <th>Submission Deadline</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="workshop-body"></tbody>
+    </table>
+
+    <p class="page-updated">Last updated: July 2026</p>
+</main>
+
+<footer>© 2026 Jonas Mayer Martins.</footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+//  Fields:
+//    name        : string
+//    flag        : emoji flag
+//    city        : string  (or "co-located with X")
+//    dates       : string  when the event takes place (leave "" if unknown)
+//    deadline    : string  submission deadline text
+//    arr         : bool    true adds "(ARR)" label after deadline
+//    passed      : bool    true dims the row and shows "Passed" badge
+//    website     : string  URL to conference website (omit or "" if none)
+//    submission  : string  URL to submission page    (omit or "" if none)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const conferences = [
+    {
+        name:       "EACL 2027",
+        flag:       "🇬🇷",
+        city:       "Athens",
+        dates:      "March 9–14, 2027",
+        deadline:   "Aug 3, 2026",
+        arr:        true,
+        passed:     false,
+        website:    "https://2027.eacl.org",
+        submission: "https://2027.eacl.org/calls/papers/",
+    },
+    {
+        name:       "ICLR 2027",
+        flag:       "🇺🇸",
+        city:       "California",
+        dates:      "",
+        deadline:   "Sep 11, 2026",
+        arr:        false,
+        passed:     false,
+        website:    "https://iclr.cc",
+        submission: "https://iclr.cc/Conferences/2027/CallForPapers",
+    },
+    {
+        name:       "COLING 2027",
+        flag:       "🇲🇴",
+        city:       "Macau",
+        dates:      "March 9–14, 2027",
+        deadline:   "Oct 12, 2026",
+        arr:        true,
+        passed:     false,
+        website:    "https://2027.coling-iccl.org",
+        submission: "https://www.aclweb.org/portal/content/32nd-international-conference-computational-linguistics-coling-2027",
+    },
+    {
+        name:       "NAACL 2027",
+        flag:       "🇺🇸",
+        city:       "San Francisco",
+        dates:      "June 1–5, 2027",
+        deadline:   "Oct 12, 2026",
+        arr:        true,
+        passed:     false,
+        website:    "https://naacl.org",
+        submission: "",
+    },
+    {
+        name:       "ACL 2027",
+        flag:       "🇯🇵",
+        city:       "Kyoto",
+        dates:      "Aug 17–22, 2027",
+        deadline:   "~Jan 2027",
+        arr:        true,
+        passed:     false,
+        website:    "https://2027.aclweb.org",
+        submission: "",
+    },
+    {
+        name:       "ICML 2027",
+        flag:       "",
+        city:       "🇧🇷? South America",
+        dates:      "",
+        deadline:   "",
+        arr:        false,
+        passed:     false,
+        website:    "https://icml.cc",
+        submission: "",
+    },
+    {
+        name:       "COLM 2027",
+        flag:       "🇺🇸?",
+        city:       "TBA",
+        dates:      "Oct 6–9, 2027",
+        deadline:   "~Mar 2027",
+        arr:        false,
+        passed:     false,
+        website:    "https://colmweb.org",
+        submission: "",
+    },
+    {
+        name:       "NeurIPS 2027",
+        flag:       "🇪🇺",
+        city:       "Europe",
+        dates:      "~Dec 2027",
+        deadline:   "~May 2027",
+        arr:        false,
+        passed:     false,
+        website:    "https://neurips.cc",
+        submission: "",
+    },
+    {
+        name:       "EMNLP 2026",
+        flag:       "🇭🇺",
+        city:       "Budapest",
+        dates:      "",
+        deadline:   "May 25, 2026",
+        arr:        true,
+        passed:     true,
+        website:    "https://2026.emnlp.org",
+        submission: "",
+    },
+];
+
+const workshops = [
+    {
+        name:       "HumanCLAIM 2027",
+        flag:       "🇩🇪",
+        city:       "Göttingen",
+        dates:      "Mar 17–18, 2027",
+        deadline:   "Mar 17, 2027",
+        arr:        false,
+        passed:     false,
+        website:    "",
+        submission: "",
+    },
+    {
+        name:       "BlackboxNLP 2026",
+        flag:       "🇭🇺",
+        city:       "Budapest",
+        dates:      "",
+        deadline:   "Jul 17, 2026",
+        arr:        false,
+        passed:     false,
+        website:    "https://blackboxnlp.github.io",
+        submission: "",
+    },
+    {
+        name:       "BabyLM 2026 @ EMNLP",
+        flag:       "🇭🇺",
+        city:       "Budapest",
+        dates:      "",
+        deadline:   "Jul, 2026",
+        arr:        false,
+        passed:     true,
+        website:    "https://babylm.github.io",
+        submission: "",
+    },
+    {
+        name:       "Developmental AI for Language and Cognition",
+        flag:       "🇫🇷",
+        city:       "Grenoble",
+        dates:      "",
+        deadline:   "Sep 20, 2026",
+        arr:        false,
+        passed:     false,
+        website:    "",
+        submission: "",
+    },
+    {
+        name:       "Cognitive Modeling and Computational Linguistics",
+        flag:       "🇪🇸",
+        city:       "co-located with LREC",
+        dates:      "",
+        deadline:   "Feb 25, 2026",
+        arr:        false,
+        passed:     true,
+        website:    "",
+        submission: "",
+    },
+    {
+        name:       "Innovative Use of NLP for Building Educational Applications",
+        flag:       "🇯🇵",
+        city:       "co-located with ACL",
+        dates:      "",
+        deadline:   "Mar 30, 2026",
+        arr:        false,
+        passed:     true,
+        website:    "",
+        submission: "",
+    },
+    {
+        name:       "Multilingual Minds and Machines Meeting",
+        flag:       "🇳🇱",
+        city:       "Nijmegen",
+        dates:      "Mar 21, 2026",
+        deadline:   "Mar 21, 2026",
+        arr:        false,
+        passed:     true,
+        website:    "",
+        submission: "",
+    },
+    {
+        name:       "Methods and Opportunities at Small Scale",
+        flag:       "🇭🇺",
+        city:       "co-located with EMNLP",
+        dates:      "",
+        deadline:   "Jul 3, 2026",
+        arr:        false,
+        passed:     true,
+        website:    "",
+        submission: "",
+    },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  Rendering
+// ─────────────────────────────────────────────────────────────────────────────
+
+function linkWrap(text, url) {
+    if (!url) return text;
+    return `<a href="${url}" target="_blank" rel="noopener">${text}</a>`;
+}
+
+function buildRow(entry) {
+    const tr = document.createElement("tr");
+    if (entry.passed) tr.classList.add("row-passed");
+
+    const deadlineText = entry.arr
+        ? `${entry.deadline} <span class="arr-note">(ARR)</span>`
+        : entry.deadline;
+
+    const badge = entry.passed
+        ? `<span class="badge-passed">Passed</span>`
+        : `<span class="badge-upcoming">Upcoming</span>`;
+
+    tr.innerHTML = `
+        <td>${linkWrap(entry.name, entry.website)}</td>
+        <td>${entry.flag} ${entry.city}</td>
+        <td>${entry.dates || "—"}</td>
+        <td>${linkWrap(deadlineText, entry.submission)}</td>
+        <td>${badge}</td>
+    `;
+    return tr;
+}
+
+document.getElementById("conf-body").append(...conferences.map(buildRow));
+document.getElementById("workshop-body").append(...workshops.map(buildRow));
+</script>
+
+</body>
+</html>
