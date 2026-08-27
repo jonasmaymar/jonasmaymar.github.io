@@ -59,19 +59,64 @@
 
         <!-- Image gallery -->
         <div class="gallery">
+
+
             <figure>
-                <img src="assets/moquettes/bezuege_2025-09-13.png" alt="Moquette design 13 September 2025">
-                <figcaption>Design from 13 September 2025</figcaption>
+                <img src="assets/moquettes/bezuege_2025-09-14_RE6_Rheda-Wiedenbrueck-Minden.png" alt="moquette design">
+                <figcaption>
+                    <span class="fig-line">RE 6</span>
+                    <a href="https://de.wikipedia.org/wiki/Rhein-Weser-Express" target="_blank" rel="noopener">
+                        Rhein-Weser-Express (RRX)
+                    </a>
+                    <span class="fig-date">14.09.2025</span>
+                </figcaption>
             </figure>
 
             <figure>
-                <img src="assets/moquettes/bezuege_2025-09-10.png" alt="Moquette design 10 September 2025">
-                <figcaption>Design from 10 September 2025</figcaption>
+                <img src="assets/moquettes/bezuege_2025-09-13_RE60_Hannover-Osnabrueck.png" alt="moquette design">
+                <figcaption>
+                    <span class="fig-line">RE 60</span>
+                    <a href="https://de.wikipedia.org/wiki/Ems-Leine-Express" target="_blank" rel="noopener">
+                        Ems-Leine-Express
+                    </a>
+                    <span class="fig-date">13.09.2025</span>
+                </figcaption>
+            </figure>
+
+
+            <figure>
+                <img src="assets/moquettes/bezuege_2025-09-13_Metronom_Goettingen-Hannover.png" alt="moquette design">
+                <figcaption>
+                    <span class="fig-line">RE 2</span>
+                    <a href="https://de.wikipedia.org/wiki/Rhein-Weser-Express" target="_blank" rel="noopener">
+                        Metronom
+                    </a>
+                    (Leinetal-Takt Hannover–Göttingen)
+                    <span class="fig-date">13.09.2025</span>
+                </figcaption>
+            </figure>
+
+
+            <figure>
+                <img src="assets/moquettes/bezuege_2025-09-10.png" alt="moquette design">
+                <figcaption>
+                    <span class="fig-line">Line 21</span>
+                    <a href="https://www.goevb.de/fileadmin/user_upload/GoeVB_Liniennetzplan_aktuell.pdf" target="_blank" rel="noopener">
+                        Bus in Göttingen
+                    </a>
+                    <span class="fig-date">10.09.2025</span>
+                </figcaption>
             </figure>
 
             <figure>
-                <img src="assets/moquettes/bezuege_2025-01-21.png" alt="Moquette design 21 January 2025">
-                <figcaption>Design from 21 January 2025</figcaption>
+                <img src="assets/moquettes/bezuege_2025-01-21.png" alt="moquette design">
+                <figcaption>
+                    <span class="fig-line">S1</span>
+                    <a href="https://de.wikipedia.org/wiki/S-Bahn_München" target="_blank" rel="noopener">
+                        S-Bahn München
+                    </a>
+                    <span class="fig-date">21.01.2025</span>
+                </figcaption>
             </figure>
         </div>
     </section>
@@ -82,6 +127,52 @@
 <footer>
     <p>&copy; 2026 Jonas Mayer Martins</p>
 </footer>
+
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+</div>
+
+<script>
+    const lightbox     = document.getElementById('lightbox');
+    const lightboxImg  = document.getElementById('lightbox-img');
+    const lightboxCap  = document.getElementById('lightbox-caption');
+    const closeBtn     = document.querySelector('.lightbox-close');
+
+    // Open on image click
+    document.querySelectorAll('.gallery figure img').forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+
+            // Grab caption text (strip HTML tags for simplicity)
+            const caption = img.closest('figure').querySelector('figcaption');
+            lightboxCap.textContent = caption ? caption.innerText : '';
+
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // prevent background scroll
+        });
+    });
+
+    // Close on button click
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close on click outside the image
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+</script>
 
 </body>
 </html>
