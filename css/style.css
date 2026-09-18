@@ -423,3 +423,25 @@ month {
 .lightbox-close:hover {
     color: #fff;
 }
+
+
+/* -------------------------------------------------
+   Button that opens the PDF – matches your dark theme
+   ------------------------------------------------- */
+.btn-cv {
+  display: inline-block;
+  padding: 0.55rem 1.3rem;
+  margin: 0.5rem 0 1.5rem;
+  border: 1px solid #8ab4f8;          /* accent colour from your links */
+  border-radius: 6px;
+  color: #8ab4f8;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background-color .2s ease, color .2s ease;
+}
+.btn-cv:hover {
+  background-color: #8ab4f8;
+  color: #0a0a10;                     /* same as page background */
+  text-decoration: none;
+}
